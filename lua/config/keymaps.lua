@@ -17,3 +17,6 @@ keymap("n", "<leader>Y", '"+Y', { desc = "Yank line to clipboard" })
 
 -- <leader>P: カーソル前にクリップボードから貼り付け
 keymap({"n", "v"}, "<leader>P", '"+P', { desc = "Paste before from clipboard" })
+
+-- <Esc> キーマッピング
+vim.keymap.set("i", "jk", "<Esc>")
