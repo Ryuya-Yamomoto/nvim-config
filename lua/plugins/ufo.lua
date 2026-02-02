@@ -6,7 +6,6 @@ return {
     },
     event = "VeryLazy",
     config = function()
-      -- Fold設定
       vim.o.foldcolumn = '1'
       vim.o.foldlevel = 99
       vim.o.foldlevelstart = 99
@@ -21,6 +20,18 @@ return {
         provider_selector = function(bufnr, filetype, buftype)
           return {'treesitter', 'indent'}
         end
+      })
+      
+      -- 複数のタイミングで全展開を試みる
+      local function open_all_folds()
+        vim.opt.foldlevel = 99
+        pcall(require('ufo').openAllFolds)
+      end
+      
+      vim.api.nvim_create_autocmd({"BufReadPost", "BufWinEnter"}, {
+        callback = function()
+          vim.defer_fn(open_all_folds, 100)  -- 100ms遅延
+        end,
       })
     end,
   },
