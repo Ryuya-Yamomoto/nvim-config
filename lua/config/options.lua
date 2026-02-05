@@ -26,3 +26,6 @@ vim.opt.clipboard = "unnamedplus"  -- システムクリップボードを使用
 vim.opt.termguicolors = true  -- True colorをサポート
 vim.opt.updatetime = 300      -- 更新時間を短く
 vim.opt.timeoutlen = 500      -- キーマップのタイムアウト
+
+-- init.lua に追加
+vim.opt.ambiwidth = 'single'  -- または 'double'
