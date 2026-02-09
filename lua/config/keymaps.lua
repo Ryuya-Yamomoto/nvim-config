@@ -6,6 +6,7 @@ keymap({"n", "v"}, "<leader>d", '"+d', { desc = "Delete to clipboard" })
 keymap({"n", "v"}, "<leader>p", '"+p', { desc = "Paste from clipboard" })
 keymap("n", "<leader>Y", '"+Y', { desc = "Yank line to clipboard" })
 keymap({"n", "v"}, "<leader>P", '"+P', { desc = "Paste before from clipboard" })
+keymap("n", "<leader>cp", ':let @+ = expand("%:p")<CR>', { desc = "Copy file path to clipboard" })
 keymap("i", "jj", "<Esc>")
 
 -- LSP関係のジャンプ機能
