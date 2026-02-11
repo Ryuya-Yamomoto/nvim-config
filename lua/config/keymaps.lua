@@ -10,5 +10,7 @@ keymap("n", "<leader>cp", ':let @+ = expand("%:p")<CR>', { desc = "Copy file pat
 keymap("i", "jj", "<Esc>")
 
 -- LSP関係のジャンプ機能
-keymap('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = '定義ジャンプ (Telescope)' })
-keymap('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', { desc = '参照一覧 (Telescope)' })
+keymap('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', { desc = '定義ジャンプ' })
+keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', { desc = '参照一覧' })
+keymap('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', { desc = '実装ジャンプ' })
+keymap('n', 'K', vim.lsp.buf.hover, { desc = 'ホバー情報' })
