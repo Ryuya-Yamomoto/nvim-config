@@ -19,6 +19,10 @@ return {
       clear_env = false,
       shell = vim.o.shell,
       auto_scroll = true,
+      highlights = {
+        Normal = { guibg = "#181817" },
+        FloatBorder = { guibg = "#181817" },
+      },
       float_opts = {
         border = 'curved',
         winblend = 3,

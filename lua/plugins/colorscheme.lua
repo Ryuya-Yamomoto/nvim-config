@@ -14,6 +14,9 @@ return {
         },
       })
       vim.cmd([[colorscheme teide]])
+      vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#181817" })
+      vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "#18181a" })
+      vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#18181a", bg = "#18181a" })
     end,
   },
 }
