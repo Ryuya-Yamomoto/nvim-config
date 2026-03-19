@@ -7,7 +7,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
-      ensure_installed = { "lua_ls", "pyright", "ts_ls", "eslint" },
+      ensure_installed = { "lua_ls", "pyright", "ts_ls" },
     },
   },
   {
@@ -30,16 +30,6 @@ return {
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
 
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
-        on_attach = function(_, bufnr)
-          -- 保存時に ESLint の自動修正を実行
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-          })
-        end,
-      })
     end,
   },
 }
